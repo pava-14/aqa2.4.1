@@ -5,15 +5,14 @@ import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.support.FindBy;
 import ru.netology.data.DataHelper;
 
+import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.page;
 
 public class VerificationPage {
-    @FindBy(css = "[data-test-id=code] input")
-    private SelenideElement codeField;
-    @FindBy(css = "[data-test-id=action-verify]")
-    private SelenideElement verifyButton;
+    private SelenideElement codeField = $("[data-test-id=code] input");
+    private SelenideElement verifyButton = $("[data-test-id=action-verify]");
 
-    public VerificationPage(){
+    public VerificationPage() {
         codeField.waitUntil(Condition.visible, 15000);
     }
 

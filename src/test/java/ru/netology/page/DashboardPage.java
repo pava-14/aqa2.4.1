@@ -1,13 +1,15 @@
 package ru.netology.page;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.support.FindBy;
 
+import static com.codeborne.selenide.Selenide.$;
+
 public class DashboardPage {
-    @FindBy(css = "[data-test-id=dashboard]")
-    private SelenideElement heading;
+    private SelenideElement heading = $("[data-test-id=dashboard]");
 
     public DashboardPage() {
-        heading.shouldBe(visible);
+        heading.waitUntil(Condition.visible, 15000);
     }
 }
