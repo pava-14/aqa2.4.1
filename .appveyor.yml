@@ -1,5 +1,5 @@
-#image: Ubuntu  # образ для сборки
-image: Visual Studio 2017
+image: Ubuntu  # образ для сборки
+#image: Visual Studio 2017
 
 stack: jdk 11  # версия JDK
 
